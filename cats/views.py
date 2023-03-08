@@ -5,7 +5,6 @@ from rest_framework.response import Response
 from .models import Cat
 from .serializers import CatSerializer
 
-from django.shortcuts import get_object_or_404
 
 
 @api_view(['GET', 'POST'])
@@ -34,4 +33,3 @@ def cat_detail(request, pk):
         return Response(status=status.HTTP_204_NO_CONTENT)
     serializer = CatSerializer(cat, many=False)
     return Response(serializer.data)
-
